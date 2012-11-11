@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <xsd:complexType name="tRoot">
+    <xsd:annotation>
+      <xsd:appinfo source="WMQI_APPINFO">
+        <tdsStructRep dataElementSeparation="AllElementsDelimited" delimiter="&lt;CR&gt;&lt;LF&gt;" groupTerminator="" messageSetDefaultRep="Text1" suppressAbsentElementDelimiters="Never"/>
+      </xsd:appinfo>
+    </xsd:annotation>
+    <xsd:sequence>
+      <xsd:element name="header" type="tHeader"/>
+      <xsd:element maxOccurs="1" name="tables" type="tTables">
+        <xsd:annotation>
+          <xsd:appinfo source="WMQI_APPINFO">
+            <tdsElemRep messageSetDefaultRep="Text1" precision="-1"/>
+            <tdsInclRep messageSetDefaultRep="Text1" repeatingElementDelimiter=""/>
+          </xsd:appinfo>
+        </xsd:annotation>
+      </xsd:element>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:element name="TDSMessage" type="tRoot">
+    <xsd:annotation>
+      <xsd:appinfo source="WMQI_APPINFO">
+        <MRMessage messageDefinition="/0/TDSMessage;XSDElementDeclaration$MRObject"/>
+      </xsd:appinfo>
+    </xsd:annotation>
+  </xsd:element>
+  <xsd:complexType name="tHeader">
+    <xsd:annotation>
+      <xsd:appinfo source="WMQI_APPINFO">
+        <tdsStructRep dataElementSeparation="AllElementsDelimited" delimiter="&lt;CR&gt;&lt;LF&gt;" messageSetDefaultRep="Text1"/>
+      </xsd:appinfo>
+    </xsd:annotation>
+    <xsd:sequence>
+      <xsd:sequence>
+        <xsd:annotation>
+          <xsd:appinfo source="WMQI_APPINFO">
+            <tdsStructRep dataElementSeparation="AllElementsDelimited" delimiter="&lt;CR&gt;&lt;LF&gt;" groupTerminator="&lt;CR&gt;&lt;LF&gt;" messageSetDefaultRep="Text1"/>
+          </xsd:appinfo>
+        </xsd:annotation>
+        <xsd:element name="file" type="xsd:string"/>
+      </xsd:sequence>
+      <xsd:sequence>
+        <xsd:annotation>
+          <xsd:appinfo source="WMQI_APPINFO">
+            <tdsStructRep dataElementSeparation="AllElementsDelimited" delimiter="&lt;CR&gt;&lt;LF&gt;" groupTerminator="&lt;CR&gt;&lt;LF&gt;" messageSetDefaultRep="Text1"/>
+          </xsd:appinfo>
+        </xsd:annotation>
+        <xsd:element name="action" type="xsd:string"/>
+        <xsd:element name="tx" type="xsd:string"/>
+      </xsd:sequence>
+      <xsd:sequence>
+        <xsd:annotation>
+          <xsd:appinfo source="WMQI_APPINFO">
+            <tdsStructRep dataElementSeparation="AllElementsDelimited" delimiter="&lt;CR&gt;&lt;LF&gt;" groupTerminator="&lt;CR&gt;&lt;LF&gt;" messageSetDefaultRep="Text1"/>
+          </xsd:appinfo>
+        </xsd:annotation>
+        <xsd:element name="key" type="xsd:string"/>
+        <xsd:element name="operations" type="xsd:string"/>
+        <xsd:element name="warning" type="xsd:string"/>
+        <xsd:element minOccurs="1" name="type" type="xsd:string"/>
+      </xsd:sequence>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="tTables">
+    <xsd:annotation>
+      <xsd:appinfo source="WMQI_APPINFO">
+        <tdsStructRep dataElementSeparation="AllElementsDelimited" delimiter="&lt;CR&gt;&lt;LF&gt;" groupIndicator="" groupTerminator="" messageSetDefaultRep="Text1"/>
+      </xsd:appinfo>
+    </xsd:annotation>
+    <xsd:sequence>
+      <xsd:element maxOccurs="unbounded" name="table" type="tTable">
+        <xsd:annotation>
+          <xsd:appinfo source="WMQI_APPINFO">
+            <tdsElemRep messageSetDefaultRep="Text1" precision="-1" tag=""/>
+            <tdsInclRep messageSetDefaultRep="Text1" repeatingElementDelimiter="&lt;CR&gt;&lt;LF&gt;&lt;CR&gt;&lt;LF&gt;"/>
+          </xsd:appinfo>
+        </xsd:annotation>
+      </xsd:element>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="tTable">
+    <xsd:annotation>
+      <xsd:appinfo source="WMQI_APPINFO">
+        <tdsStructRep dataElementSeparation="AllElementsDelimited" delimiter="&lt;CR&gt;&lt;LF&gt;" groupIndicator="TBL&lt;SP&gt;" groupTerminator="EOT" messageSetDefaultRep="Text1"/>
+      </xsd:appinfo>
+    </xsd:annotation>
+    <xsd:sequence>
+      <xsd:element name="name" type="xsd:string">
+        <xsd:annotation>
+          <xsd:appinfo source="WMQI_APPINFO">
+            <tdsElemRep messageSetDefaultRep="Text1" precision="-1" tag=""/>
+          </xsd:appinfo>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element maxOccurs="unbounded" name="column" type="tColumn"/>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="tColumn">
+    <xsd:annotation>
+      <xsd:appinfo source="WMQI_APPINFO">
+        <tdsStructRep dataElementSeparation="AllElementsDelimited" delimiter="&lt;SP&gt;" messageSetDefaultRep="Text1"/>
+      </xsd:appinfo>
+    </xsd:annotation>
+    <xsd:sequence>
+      <xsd:element name="name" type="xsd:string"/>
+      <xsd:element name="value" type="xsd:string"/>
+    </xsd:sequence>
+  </xsd:complexType>
+</xsd:schema>

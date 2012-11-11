@@ -1,0 +1,172 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xmi:XMI xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:com.ibm.etools.mft.unittest.core.models.client="http:///com/ibm/etools/mft/unittest/core/models/client.ecore" xmlns:com.ibm.wbit.comptest.common.models.event="http:///com/ibm/etools/mft/unittest/common/models/event.ecore" xmlns:com.ibm.wbit.comptest.common.models.value="http:///com/ibm/etools/mft/unittest/common/models/value.ecore" xmlns:http="http:///com/ibm//etools/mft/unittest/common/model2/status" xmlns:jms="http:///com/ibm//etools/mft/unittest/common/model2/jms" xmlns:model2="http:///com/ibm//etools/mft/unittest/common/model2" xmlns:mq="http:///com/ibm//etools/mft/unittest/common/model2/mq" xmlns:node="http:///com/ibm//etools/mft/unittest/common/model2/node">
+  <com.ibm.etools.mft.unittest.core.models.client:EclipseClient iD="1233749697484-0" eventTrace="/1" clientID="1233749697484-0">
+    <scopes xsi:type="model2:FlowTestScope" name="Configuration" iD="default" dirty="false">
+      <testModules xsi:type="model2:TestMsgFlow" name="/TDS/TDSFlow.msgflow" iD="1233749697500-4">
+        <monitors xsi:type="mq:MQMonitor" name="TDS.OUT" iD="1235426268979-4750" host="localhost" port="2414" queueManager="WBRK61_DEFAULT_QUEUE_MANAGER" queue="TDS.OUT"/>
+        <inputNodes xsi:type="mq:MQInputNode" nodeName="TDS.IN" queue="TDS.IN"/>
+      </testModules>
+      <settings xsi:type="model2:FlowSettings"/>
+      <settings xsi:type="model2:DeploymentSettings" runtimeEnvType="WebSphere Message Broker v6.1" runtimeInstance="WBRK61_DEFAULT_CONFIGURATION_MANAGER^WBRK61_DEFAULT_BROKER^default^localhost^2414" runtimeMode="1"/>
+      <settings xsi:type="mq:MQSettings"/>
+      <settings xsi:type="jms:JMSSettings"/>
+      <settings xsi:type="mq:MQMessageHeaders"/>
+      <settings xsi:type="jms:JMSMessageHeaders"/>
+      <messageHeaders xsi:type="mq:MQHeader" iD="1233749697484-3" headerName="Default Header"/>
+      <messageHeaders xsi:type="jms:JMSHeader" headerName="Default Header"/>
+    </scopes>
+  </com.ibm.etools.mft.unittest.core.models.client:EclipseClient>
+  <com.ibm.wbit.comptest.common.models.event:ExecutionEventTrace iD="1233749697484-1" children="/2"/>
+  <model2:InteractiveInputNodeInvocationEvent iD="1235425627322-4620" readOnly="true" clientID="1233749697484-0" timestamp="1235425627322" children="/3 /4 /9" msgFlow="/TDS/TDSFlow.msgflow" nodeId="FCMComposite_1_1" testScopeID="default" nodeName="TDS.IN" nodeType="ComIbmMQInput.msgnode" targetDeploymentLocationID="1233749755987-9">
+    <request xsi:type="model2:TestMessage" iD="1233749698719-6" header="/0/@scopes.0/@messageHeaders.0">
+      <properties name="plainText" stringValue="%23+FILE+0128_154659_ins.00175150.00233289%0D%0A%0D%0AACTION+%22ins%22%0D%0ATRANS_ID+314874%0D%0A%0D%0AXACTKEY+321321%0D%0AOPERATIONS+1%0D%0AWARNING+%22%22%0D%0AOPERATION_TYPE+%22UPDATE%22%0D%0A%0D%0ATBL+Entities%0D%0AEntities_Id+1%0D%0AEntities_ShortName+%22FOO%22%0D%0ADataservers_Id+1%0D%0ACities_Id+9621%0D%0AEOT%0D%0A%0D%0ATBL+Users%0D%0AUsers_Id+6541%0D%0AUsers_ShortName+%22FB%22%0D%0AUsersGrp_Id+81815%0D%0AUsers_Name+%22FOO+BAR%22%0D%0AOriginalId+0%0D%0AEOT"/>
+      <properties name="WSDL_URI"/>
+      <properties name="WSDL_OPERATION_IN_NAME"/>
+      <properties name="WSDL_OPERATION_NAME"/>
+      <properties name="WSDL_OPERATION_OUT_NAME"/>
+      <properties name="messageSource" stringValue="sourceView"/>
+      <properties name="SHOW_HEX_VIEW"/>
+      <properties name="linkedFile"/>
+      <headerBeenUsed xsi:type="mq:MQHeader" iD="1233749697484-3" headerName="Default Header"/>
+    </request>
+  </model2:InteractiveInputNodeInvocationEvent>
+  <http:DeploymentStatus iD="1235425627541-4623" parentID="1235425627322-4620" log="[Info]  Begin deploying message flows&#xA;&#xD;[Info]  Deploying the message flow application&#xA;&#xD;[Info]  Going to rebuild and deploy broker archive&#xA;&#xD;[Info]  Cleaning Broker Archive...&#xA;&#xD;[Info]  Rebuilding broker archive...&#xA;&#xD;[Info]  Initializing test message monitors...&#xA;&#xD;[Info]  Deploying broker archive to execution group...&#xA;&#xD;[Info]  Test client is ready to send and monitor messages.&#xA;&#xD;[Info]  Starting message flows&#xA;&#xD;[Info]  Message flows deployment successfully completed" status="OK" totalWork="10" worked="10" scope="/0/@scopes.0"/>
+  <com.ibm.wbit.comptest.common.models.event:StartEvent name="Starting" iD="1235425639338-4638" readOnly="true" clientID="1233749697484-0" parentID="1235425627322-4620" timestamp="1235425639338" invokeCommandId="1235425639338-4634" children="/5 /6 /7 /8"/>
+  <mq:MQInformationEvent name="Sending Message to MQ Queue &quot;TDS.IN&quot;" iD="1235425639385-4641" host="localhost" port="2414" queueManager="WBRK61_DEFAULT_QUEUE_MANAGER" queue="TDS.IN" readOnly="true" clientID="1233749697484-0" parentID="1235425639338-4638" invokeCommandId="1235425639338-4635">
+    <message xsi:type="model2:TestMessage" iD="1233749698719-6" header="/0/@scopes.0/@messageHeaders.0">
+      <properties name="plainText" stringValue="%23+FILE+0128_154659_ins.00175150.00233289%0D%0A%0D%0AACTION+%22ins%22%0D%0ATRANS_ID+314874%0D%0A%0D%0AXACTKEY+321321%0D%0AOPERATIONS+1%0D%0AWARNING+%22%22%0D%0AOPERATION_TYPE+%22UPDATE%22%0D%0A%0D%0ATBL+Entities%0D%0AEntities_Id+1%0D%0AEntities_ShortName+%22FOO%22%0D%0ADataservers_Id+1%0D%0ACities_Id+9621%0D%0AEOT%0D%0A%0D%0ATBL+Users%0D%0AUsers_Id+6541%0D%0AUsers_ShortName+%22FB%22%0D%0AUsersGrp_Id+81815%0D%0AUsers_Name+%22FOO+BAR%22%0D%0AOriginalId+0%0D%0AEOT"/>
+      <properties name="WSDL_URI"/>
+      <properties name="WSDL_OPERATION_IN_NAME"/>
+      <properties name="WSDL_OPERATION_NAME"/>
+      <properties name="WSDL_OPERATION_OUT_NAME"/>
+      <properties name="messageSource" stringValue="sourceView"/>
+      <properties name="SHOW_HEX_VIEW"/>
+      <properties name="linkedFile"/>
+      <headerBeenUsed xsi:type="mq:MQHeader" iD="1235425639385-4644" applicationIdData="                                " applicationOriginData="    " characterSet="819" encoding="273" format="        " putApplicationName="                            " putDateTime="Mon Feb 23 22:47:19 CET 2009" replyToQueueManagerName="                                                " replyToQueueName="                                                " userId="            " msgId="AMQ+WBRK61_DEFAU%C3%BF%E2%80%A6%E2%80%B0I+%13W%04" correlId="%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00" accountingToken="%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00" groupId="%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00"/>
+    </message>
+  </mq:MQInformationEvent>
+  <node:NodeExitEvent name="Entry Event" description="desc" iD="1235425639635-4646" readOnly="true" clientID="1233749697484-0" parentID="1235425639338-4638" timestamp="1235425639635" flow="/TDS/TDSFlow.msgflow" sourceNode="TDS.IN" targetNode="TDS.OUT" targetTerminal="in" sourceTerminal="out">
+    <message xsi:type="model2:TestMessage" iD="1235425639635-4647">
+      <properties name="messageSource" stringValue="structureView"/>
+      <properties name="plainText"/>
+      <properties name="SHOW_HEX_VIEW"/>
+      <properties name="linkedFile"/>
+      <parameters xsi:type="com.ibm.wbit.comptest.common.models.value:ValueStructure" name="Properties" iD="1235425639635-4648">
+        <elements xsi:type="com.ibm.wbit.comptest.common.models.value:ValueStructure" name="MessageSet" iD="1235425639635-4649" value="TDSSet"/>
+        <elements xsi:type="com.ibm.wbit.comptest.common.models.value:ValueStructure" name="MessageType" iD="1235425639635-4650" value="{}:TDSMessage"/>
+        <elements xsi:type="com.ibm.wbit.comptest.common.models.value:ValueStructure" name="MessageFormat" iD="1235425639635-4651" value="Text1"/>
+        <elements xsi:type="com.ibm.wbit.comptest.common.models.value:ValueStructure" name="Encoding" iD="1235425639635-4652" value="273"/>
+        <elements xsi:type="com.ibm.wbit.comptest.common.models.value:ValueStructure" name="CodedCharSetId" iD="1235425639635-4653" value="819"/>
+        <elements xsi:type="com.ibm.wbit.comptest.common.models.value:ValueStructure" name="Transactional" iD="1235425639635-4654" value="true"/>
+        <elements xsi:type="com.ibm.wbit.comptest.common.models.value:ValueStructure" name="Persistence" iD="1235425639635-4655" value="false"/>
+        <elements xsi:type="com.ibm.wbit.comptest.common.models.value:ValueStructure" name="CreationTime" iD="1235425639635-4656" value="2009-02-23 21:47:19.360"/>
+        <elements xsi:type="com.ibm.wbit.comptest.common.models.value:ValueStructure" name="ExpirationTime" iD="1235425639635-4657" value="-1"/>
+        <elements xsi:type="com.ibm.wbit.comptest.common.models.value:ValueStructure" name="Priority" iD="1235425639635-4658" value="0"/>
+        <elements xsi:type="com.ibm.wbit.comptest.common.models.value:ValueStructure" name="ReplyIdentifier" iD="1235425639635-4659" value="000000000000000000000000000000000000000000000000"/>
+        <elements xsi:type="com.ibm.wbit.comptest.common.models.value:ValueStructure" name="ReplyProtocol" iD="1235425639635-4660" value="MQ"/>
+        <elements xsi:type="com.ibm.wbit.comptest.common.models.value:ValueStructure" name="Topic" iD="1235425639635-4661" value=""/>
+        <elements xsi:type="com.ibm.wbit.comptest.common.models.value:ValueStructure" name="ContentType" iD="1235425639635-4662" value=""/>
+        <elements xsi:type="com.ibm.wbit.comptest.common.models.value:ValueStructure" name="IdentitySourceType" iD="1235425639635-4663" value=""/>
+        <elements xsi:type="com.ibm.wbit.comptest.common.models.value:ValueStructure" name="IdentitySourceToken" iD="1235425639635-4664" value=""/>
+        <elements xsi:type="com.ibm.wbit.comptest.common.models.value:ValueStructure" name="IdentitySourcePassword" iD="1235425639635-4665" value=""/>
+        <elements xsi:type="com.ibm.wbit.comptest.common.models.value:ValueStructure" name="IdentitySourceIssuedBy" iD="1235425639635-4666" value=""/>
+        <elements xsi:type="com.ibm.wbit.comptest.common.models.value:ValueStructure" name="IdentityMappedType" iD="1235425639635-4667" value=""/>
+        <elements xsi:type="com.ibm.wbit.comptest.common.models.value:ValueStructure" name="IdentityMappedToken" iD="1235425639635-4668" value=""/>
+        <elements xsi:type="com.ibm.wbit.comptest.common.models.value:ValueStructure" name="IdentityMappedPassword" iD="1235425639635-4669" value=""/>
+        <elements xsi:type="com.ibm.wbit.comptest.common.models.value:ValueStructure" name="IdentityMappedIssuedBy" iD="1235425639635-4670" value=""/>
+      </parameters>
+      <parameters xsi:type="com.ibm.wbit.comptest.common.models.value:ValueStructure" name="MQMD" iD="1235425639635-4671">
+        <elements xsi:type="com.ibm.wbit.comptest.common.models.value:ValueStructure" name="SourceQueue" iD="1235425639635-4672" value="TDS.IN"/>
+        <elements xsi:type="com.ibm.wbit.comptest.common.models.value:ValueStructure" name="Transactional" iD="1235425639635-4673" value="true"/>
+        <elements xsi:type="com.ibm.wbit.comptest.common.models.value:ValueStructure" name="Encoding" iD="1235425639635-4674" value="273"/>
+        <elements xsi:type="com.ibm.wbit.comptest.common.models.value:ValueStructure" name="CodedCharSetId" iD="1235425639635-4675" value="819"/>
+        <elements xsi:type="com.ibm.wbit.comptest.common.models.value:ValueStructure" name="Format" iD="1235425639635-4676" value="        "/>
+        <elements xsi:type="com.ibm.wbit.comptest.common.models.value:ValueStructure" name="Version" iD="1235425639635-4677" value="2"/>
+        <elements xsi:type="com.ibm.wbit.comptest.common.models.value:ValueStructure" name="Report" iD="1235425639635-4678" value="0"/>
+        <elements xsi:type="com.ibm.wbit.comptest.common.models.value:ValueStructure" name="MsgType" iD="1235425639635-4679" value="8"/>
+        <elements xsi:type="com.ibm.wbit.comptest.common.models.value:ValueStructure" name="Expiry" iD="1235425639635-4680" value="-1"/>
+        <elements xsi:type="com.ibm.wbit.comptest.common.models.value:ValueStructure" name="Feedback" iD="1235425639635-4681" value="0"/>
+        <elements xsi:type="com.ibm.wbit.comptest.common.models.value:ValueStructure" name="Priority" iD="1235425639635-4682" value="0"/>
+        <elements xsi:type="com.ibm.wbit.comptest.common.models.value:ValueStructure" name="Persistence" iD="1235425639635-4683" value="0"/>
+        <elements xsi:type="com.ibm.wbit.comptest.common.models.value:ValueStructure" name="MsgId" iD="1235425639635-4684" value="414d51205742524b36315f4445464155ff85894920135704"/>
+        <elements xsi:type="com.ibm.wbit.comptest.common.models.value:ValueStructure" name="CorrelId" iD="1235425639635-4685" value="000000000000000000000000000000000000000000000000"/>
+        <elements xsi:type="com.ibm.wbit.comptest.common.models.value:ValueStructure" name="BackoutCount" iD="1235425639635-4686" value="0"/>
+        <elements xsi:type="com.ibm.wbit.comptest.common.models.value:ValueStructure" name="ReplyToQ" iD="1235425639635-4687" value="                                                "/>
+        <elements xsi:type="com.ibm.wbit.comptest.common.models.value:ValueStructure" name="ReplyToQMgr" iD="1235425639635-4688" value="WBRK61_DEFAULT_QUEUE_MANAGER                    "/>
+        <elements xsi:type="com.ibm.wbit.comptest.common.models.value:ValueStructure" name="UserIdentifier" iD="1235425639635-4689" value="            "/>
+        <elements xsi:type="com.ibm.wbit.comptest.common.models.value:ValueStructure" name="AccountingToken" iD="1235425639635-4690" value="0000000000000000000000000000000000000000000000000000000000000000"/>
+        <elements xsi:type="com.ibm.wbit.comptest.common.models.value:ValueStructure" name="ApplIdentityData" iD="1235425639635-4691" value="                                "/>
+        <elements xsi:type="com.ibm.wbit.comptest.common.models.value:ValueStructure" name="PutApplType" iD="1235425639635-4692" value="0"/>
+        <elements xsi:type="com.ibm.wbit.comptest.common.models.value:ValueStructure" name="PutApplName" iD="1235425639635-4693" value="                            "/>
+        <elements xsi:type="com.ibm.wbit.comptest.common.models.value:ValueStructure" name="PutDate" iD="1235425639635-4694" value="2009-02-23"/>
+        <elements xsi:type="com.ibm.wbit.comptest.common.models.value:ValueStructure" name="PutTime" iD="1235425639635-4695" value="21:47:19.360"/>
+        <elements xsi:type="com.ibm.wbit.comptest.common.models.value:ValueStructure" name="ApplOriginData" iD="1235425639635-4696" value="    "/>
+        <elements xsi:type="com.ibm.wbit.comptest.common.models.value:ValueStructure" name="GroupId" iD="1235425639635-4697" value="000000000000000000000000000000000000000000000000"/>
+        <elements xsi:type="com.ibm.wbit.comptest.common.models.value:ValueStructure" name="MsgSeqNumber" iD="1235425639635-4698" value="1"/>
+        <elements xsi:type="com.ibm.wbit.comptest.common.models.value:ValueStructure" name="Offset" iD="1235425639635-4699" value="0"/>
+        <elements xsi:type="com.ibm.wbit.comptest.common.models.value:ValueStructure" name="MsgFlags" iD="1235425639635-4700" value="0"/>
+        <elements xsi:type="com.ibm.wbit.comptest.common.models.value:ValueStructure" name="OriginalLength" iD="1235425639635-4701" value="-1"/>
+      </parameters>
+      <parameters xsi:type="com.ibm.wbit.comptest.common.models.value:ValueStructure" name="MRM" iD="1235425639635-4702">
+        <elements xsi:type="com.ibm.wbit.comptest.common.models.value:ValueStructure" name="header" iD="1235425639635-4703">
+          <elements xsi:type="com.ibm.wbit.comptest.common.models.value:ValueStructure" name="file" iD="1235425639635-4704" value="# FILE 0128_154659_ins.00175150.00233289"/>
+          <elements xsi:type="com.ibm.wbit.comptest.common.models.value:ValueStructure" name="action" iD="1235425639635-4705" value="ACTION &quot;ins&quot;"/>
+          <elements xsi:type="com.ibm.wbit.comptest.common.models.value:ValueStructure" name="tx" iD="1235425639635-4706" value="TRANS_ID 314874"/>
+          <elements xsi:type="com.ibm.wbit.comptest.common.models.value:ValueStructure" name="key" iD="1235425639635-4707" value="XACTKEY 321321"/>
+          <elements xsi:type="com.ibm.wbit.comptest.common.models.value:ValueStructure" name="operations" iD="1235425639635-4708" value="OPERATIONS 1"/>
+          <elements xsi:type="com.ibm.wbit.comptest.common.models.value:ValueStructure" name="warning" iD="1235425639635-4709" value="WARNING &quot;&quot;"/>
+          <elements xsi:type="com.ibm.wbit.comptest.common.models.value:ValueStructure" name="type" iD="1235425639635-4710" value="OPERATION_TYPE &quot;UPDATE&quot;"/>
+        </elements>
+        <elements xsi:type="com.ibm.wbit.comptest.common.models.value:ValueStructure" name="tables" iD="1235425639635-4711">
+          <elements xsi:type="com.ibm.wbit.comptest.common.models.value:ValueStructure" name="table" iD="1235425639635-4712">
+            <elements xsi:type="com.ibm.wbit.comptest.common.models.value:ValueStructure" name="name" iD="1235425639635-4713" value="Entities"/>
+            <elements xsi:type="com.ibm.wbit.comptest.common.models.value:ValueStructure" name="column" iD="1235425639635-4714">
+              <elements xsi:type="com.ibm.wbit.comptest.common.models.value:ValueStructure" name="name" iD="1235425639635-4715" value="Entities_Id"/>
+              <elements xsi:type="com.ibm.wbit.comptest.common.models.value:ValueStructure" name="value" iD="1235425639635-4716" value="1"/>
+            </elements>
+            <elements xsi:type="com.ibm.wbit.comptest.common.models.value:ValueStructure" name="column" iD="1235425639635-4717">
+              <elements xsi:type="com.ibm.wbit.comptest.common.models.value:ValueStructure" name="name" iD="1235425639635-4718" value="Entities_ShortName"/>
+              <elements xsi:type="com.ibm.wbit.comptest.common.models.value:ValueStructure" name="value" iD="1235425639635-4719" value="&quot;FOO&quot;"/>
+            </elements>
+            <elements xsi:type="com.ibm.wbit.comptest.common.models.value:ValueStructure" name="column" iD="1235425639635-4720">
+              <elements xsi:type="com.ibm.wbit.comptest.common.models.value:ValueStructure" name="name" iD="1235425639635-4721" value="Dataservers_Id"/>
+              <elements xsi:type="com.ibm.wbit.comptest.common.models.value:ValueStructure" name="value" iD="1235425639635-4722" value="1"/>
+            </elements>
+            <elements xsi:type="com.ibm.wbit.comptest.common.models.value:ValueStructure" name="column" iD="1235425639635-4723">
+              <elements xsi:type="com.ibm.wbit.comptest.common.models.value:ValueStructure" name="name" iD="1235425639635-4724" value="Cities_Id"/>
+              <elements xsi:type="com.ibm.wbit.comptest.common.models.value:ValueStructure" name="value" iD="1235425639635-4725" value="9621"/>
+            </elements>
+          </elements>
+          <elements xsi:type="com.ibm.wbit.comptest.common.models.value:ValueStructure" name="table" iD="1235425639635-4726">
+            <elements xsi:type="com.ibm.wbit.comptest.common.models.value:ValueStructure" name="name" iD="1235425639635-4727" value="Users"/>
+            <elements xsi:type="com.ibm.wbit.comptest.common.models.value:ValueStructure" name="column" iD="1235425639635-4728">
+              <elements xsi:type="com.ibm.wbit.comptest.common.models.value:ValueStructure" name="name" iD="1235425639635-4729" value="Users_Id"/>
+              <elements xsi:type="com.ibm.wbit.comptest.common.models.value:ValueStructure" name="value" iD="1235425639635-4730" value="6541"/>
+            </elements>
+            <elements xsi:type="com.ibm.wbit.comptest.common.models.value:ValueStructure" name="column" iD="1235425639635-4731">
+              <elements xsi:type="com.ibm.wbit.comptest.common.models.value:ValueStructure" name="name" iD="1235425639635-4732" value="Users_ShortName"/>
+              <elements xsi:type="com.ibm.wbit.comptest.common.models.value:ValueStructure" name="value" iD="1235425639635-4733" value="&quot;FB&quot;"/>
+            </elements>
+            <elements xsi:type="com.ibm.wbit.comptest.common.models.value:ValueStructure" name="column" iD="1235425639635-4734">
+              <elements xsi:type="com.ibm.wbit.comptest.common.models.value:ValueStructure" name="name" iD="1235425639635-4735" value="UsersGrp_Id"/>
+              <elements xsi:type="com.ibm.wbit.comptest.common.models.value:ValueStructure" name="value" iD="1235425639635-4736" value="81815"/>
+            </elements>
+            <elements xsi:type="com.ibm.wbit.comptest.common.models.value:ValueStructure" name="column" iD="1235425639635-4737">
+              <elements xsi:type="com.ibm.wbit.comptest.common.models.value:ValueStructure" name="name" iD="1235425639635-4738" value="Users_Name"/>
+              <elements xsi:type="com.ibm.wbit.comptest.common.models.value:ValueStructure" name="value" iD="1235425639635-4739" value="&quot;FOO BAR&quot;"/>
+            </elements>
+            <elements xsi:type="com.ibm.wbit.comptest.common.models.value:ValueStructure" name="column" iD="1235425639635-4740">
+              <elements xsi:type="com.ibm.wbit.comptest.common.models.value:ValueStructure" name="name" iD="1235425639635-4741" value="OriginalId"/>
+              <elements xsi:type="com.ibm.wbit.comptest.common.models.value:ValueStructure" name="value" iD="1235425639635-4742" value="0"/>
+            </elements>
+          </elements>
+        </elements>
+      </parameters>
+    </message>
+  </node:NodeExitEvent>
+  <com.ibm.wbit.comptest.common.models.event:TimeoutEvent name="Timeout" iD="1235425759338-4743" readOnly="true" clientID="1233749697484-0" parentID="1235425639338-4638" timestamp="1235425759338" invokeCommandId="1235425639338-4635"/>
+  <http:MonitoringStatus name="Stopped listening for response" iD="1235425639369-4640" clientID="1233749697484-0" parentID="1235425639338-4638">
+    <monitors xsi:type="mq:MQMonitor" name="TDS.OUT" iD="1235425627916-4624" host="localhost" port="2414" queueManager="WBRK61_DEFAULT_QUEUE_MANAGER" queue="TDS.OUT" status="OK"/>
+  </http:MonitoringStatus>
+  <com.ibm.wbit.comptest.common.models.event:EndEvent name="Stopped" iD="1235425759338-4744" readOnly="true" clientID="1233749697484-0" parentID="1235425627322-4620" timestamp="1235425759338" invokeCommandId="1235425639338-4635"/>
+</xmi:XMI>
