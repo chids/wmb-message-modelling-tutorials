@@ -1,3 +1,9 @@
+---
+layout: default
+title:  "Tagged fixed length message modelling"
+tagline: "Tutorial on modelling tagged fixed length messages in IBM WebSphere Message Broker"
+---
+
 # Introduction
 This article takes simple by example approach to message modelling within WebSphere Message Broker. It does so by showing, step by step, how to model and implement a message set for tagged fixed length data within the TDS MRM domain.
 ## Input

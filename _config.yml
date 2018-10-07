@@ -1,0 +1,10 @@
+theme: jekyll-theme-slate
+
+# Site settings
+title: "WebSphere Message Broker"
+email: marten.gustafson@gmail.com
+baseurl: "/wmb-message-modelling-tutorials" # the subpath of your site, e.g. /blog
+url: "http://marten-gustafson.se" # the base hostname & protocol for your site
+
+# Build settings
+markdown: kramdown

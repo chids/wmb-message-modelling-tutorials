@@ -1,3 +1,9 @@
+---
+layout: default
+title:  "Repeating key value message modelling"
+tagline: "Tutorial on modelling repeating key value messages in IBM WebSphere Message Broker"
+---
+
 # Foreword
 While working on this I received one crucial review point from Steve Hanson of the WMB development team. This was about how to get a key-value mapping represented one-to-one in the tree thus creating a name-value element whose name is determined by the key and the value as value. So if we have a file that looks like this: `foo "bar"`
 our tree will look this (without us actually having modelled a element explicitly named foo):
